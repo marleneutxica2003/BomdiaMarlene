@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff0f6;
+  overflow-x: hidden;
+}
+
+/* Tela inicial */
+#start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+}
+
+.heart {
+  width: 200px;
+  height: 200px;
+  background: red;
+  position: relative;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+}
+
+.heart:before {
+  top: -100px;
+  left: 0;
+}
+
+.heart:after {
+  left: 100px;
+  top: 0;
+}
+
+.heart span {
+  position: absolute;
+  transform: rotate(45deg);
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.1) rotate(-45deg); }
+  100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* Galeria */
+#gallery {
+  background: #fff0f6;
+  text-align: center;
+  padding: 20px;
+}
+
+.photo-container {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 90%;
+  max-height: 90%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.photo.active {
+  opacity: 1;
+}
+
+/* Texto correndo */
+.marquee {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: transparent;
+  color: #ff1493;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .heart {
+    width: 150px;
+    height: 150px;
+  }
+  .heart span {
+    font-size: 14px;
+  }
+  .marquee p {
+    font-size: 14px;
+  }
+}
