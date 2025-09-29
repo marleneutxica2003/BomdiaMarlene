@@ -43,7 +43,7 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
-  width: 220px;       /* controla largura do texto */
+  width: 220px;
   line-height: 1.4;
   z-index: 2;
 }
@@ -61,7 +61,7 @@ body {
 
 .heart span {
   position: absolute;
-  width: 140px;          /* largura do texto para caber dentro */
+  width: 140px;         
   transform: rotate(45deg);
   text-align: center;
   color: white;
